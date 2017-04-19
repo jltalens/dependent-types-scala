@@ -22,7 +22,7 @@ object ProductTypeHalfFibonacci {
   val six = succ(five)
   val recNProdNN = NatInd.rec(ProdTyp(Nat, Nat))
   val pair = "(half(n), half(n+1))" :: ProdTyp(Nat, Nat)
-  val halfpair = recNProdNN(PairTerm(???, ???))(n :-> (pair :-> PairTerm(???, ???) ))
+  val halfpair = recNProdNN(PairTerm(zero, one))(n :-> (pair :-> PairTerm(pair.second, succ(pair.first))  ))
   val half = n :-> halfpair(n).first
   half(six).fansi
 }
